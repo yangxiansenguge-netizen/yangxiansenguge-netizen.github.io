@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blackboard Review</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              hand: ['Patrick Hand', 'cursive'],
+            },
+            colors: {
+              chalk: {
+                bg: '#2d3436', // Dark Slate
+                board: '#3b444b', // Lighter Slate for cards
+                white: '#f1f2f6',
+                yellow: '#ffeaa7',
+                green: '#55efc4',
+                red: '#ff7675',
+                gray: '#b2bec3'
+              }
+            },
+            backgroundImage: {
+              'chalkboard': "url('https://www.transparenttextures.com/patterns/blackboard.png')",
+            },
+            animation: {
+              'dust': 'dust 0.5s ease-out forwards',
+            },
+            keyframes: {
+              dust: {
+                '0%': { opacity: '0', transform: 'scale(0.98)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Patrick Hand', cursive;
+        background-color: #2d3436;
+        color: #f1f2f6;
+      }
+      
+      /* Chalkboard Texture Class */
+      .bg-chalk-texture {
+        background-color: #2d3436;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.05' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #2d3436; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #636e72; 
+        border-radius: 5px;
+        border: 2px solid #2d3436;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #b2bec3; 
+      }
+
+      /* Base styles reset for inputs to ensure visibility */
+      input, textarea {
+        background: transparent;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-chalk-texture min-h-screen">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
