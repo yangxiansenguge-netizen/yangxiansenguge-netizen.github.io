@@ -1,0 +1,5 @@
+{
+  "name": "Exam Auto-Parser",
+  "description": "A React application that parses exam JSON data and renders a graded interactive UI with result visualization using Tailwind CSS.",
+  "requestFramePermissions": []
+}
