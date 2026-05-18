@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import { ExamData, LibraryEntry, SingleExamEntry, FolderEntry } from './types';
 import { QuestionCard } from './components/QuestionCard';
+import { javaBasicsData } from './src/data/javaBasics';
 
 const STORAGE_KEY = 'chalk_exam_library_v2';
 const CHUNK_SIZE = 50; // Threshold to split into folders
@@ -27,7 +28,31 @@ const App: React.FC = () => {
           ...item,
           type: item.type || 'exam'
         }));
-        setLibrary(migrated);
+        // If library is empty (e.g. user cleared all), also preload built-in dataset
+        if (migrated.length === 0) {
+          const builtInEntry: SingleExamEntry = {
+            type: 'exam',
+            id: 'built-in-java-basics',
+            name: 'Java基础面试题（内置）',
+            dateAdded: Date.now(),
+            data: javaBasicsData
+          };
+          setLibrary([builtInEntry]);
+          localStorage.setItem(STORAGE_KEY, JSON.stringify([builtInEntry]));
+        } else {
+          setLibrary(migrated);
+        }
+      } else {
+        // First visit: preload built-in Java basics dataset
+        const builtInEntry: SingleExamEntry = {
+          type: 'exam',
+          id: 'built-in-java-basics',
+          name: 'Java基础面试题（内置）',
+          dateAdded: Date.now(),
+          data: javaBasicsData
+        };
+        setLibrary([builtInEntry]);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify([builtInEntry]));
       }
     } catch (e) {
       console.error("Failed to load library", e);
