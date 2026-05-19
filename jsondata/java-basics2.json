@@ -1,0 +1,393 @@
+{
+  "source": "Java基础面试题库（中）",
+  "ts": 1716000000000,
+  "items": [
+    {
+      "id": 1,
+      "type": "简答",
+      "title": "面向过程编程和面向对象编程的区别？",
+      "options": [],
+      "correctAnswer": ["面向过程是以函数、步骤为核心，注重实现流程，数据和方法相互分离，适合小型简单程序；面向对象是以对象为核心，将属性和行为封装在一起，注重事务与事物之间的关系，具备封装、继承、多态特性，代码耦合度低，易维护、易扩展，适合大型项目开发。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 2,
+      "type": "简答",
+      "title": "创建对象使用什么运算符，对象实例和对象引用有什么区别？",
+      "options": [],
+      "correctAnswer": ["使用 new 运算符创建 Java 对象。对象实例是在堆内存中开辟空间真实存在的实体对象；对象引用是栈内存中的变量，仅存储对象在堆内存中的地址值，通过引用可以操作实例对象。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 3,
+      "type": "简答",
+      "title": "对象相等和引用相等有什么区别？",
+      "options": [],
+      "correctAnswer": ["引用相等使用 == 判断，比较两个引用变量指向的内存地址是否一致，判断是否为同一个对象；对象相等使用 equals 方法判断，重写后用于比较对象内部存储的业务数据内容是否相同，不关注内存地址。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 4,
+      "type": "简答",
+      "title": "一个类没有手动声明构造方法，程序可以正常运行吗？",
+      "options": [],
+      "correctAnswer": ["可以正常运行。Java 编译器会自动为该类生成一个空参无参构造方法，默认权限为 public，创建对象时可以直接调用。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 5,
+      "type": "简答",
+      "title": "构造方法有哪些特点，构造方法能否被重写？",
+      "options": [],
+      "correctAnswer": ["构造方法特点：方法名必须与类名完全一致、没有返回值类型、创建对象时由 JVM 自动调用、可以实现方法重载；构造方法不能被重写，只支持重载。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 6,
+      "type": "简答",
+      "title": "面向对象三大特征分别是什么，并简要解释？",
+      "options": [],
+      "correctAnswer": ["三大特征为封装、继承、多态。封装：隐藏类内部私有数据与实现细节，仅对外提供公共访问方式；继承：子类继承父类非私有成员，实现代码复用与功能拓展；多态：父类引用指向子类对象，同一方法在不同子类中实现不同业务逻辑。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 7,
+      "type": "简答",
+      "title": "什么是封装，举例说明封装的作用？",
+      "options": [],
+      "correctAnswer": ["封装是将类中的成员变量私有化，通过 public 修饰的 getter、setter 方法对外提供访问与修改入口。作用：保护成员变量数据安全性，限制非法数据传入，降低代码耦合度，统一数据访问规则。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 8,
+      "type": "简答",
+      "title": "什么是继承，继承具备哪些特点与好处？",
+      "options": [],
+      "correctAnswer": ["继承是 Java 中类与类之间产生从属关系的机制，使用 extends 关键字实现。特点：Java 类只支持单继承，支持多层继承，无法继承父类私有成员；好处：大幅减少重复代码，实现代码复用，为多态实现提供必备条件，便于项目功能迭代拓展。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 9,
+      "type": "简答",
+      "title": "什么是多态，多态的实现条件和运行特点？",
+      "options": [],
+      "correctAnswer": ["多态指程序运行期间，父类引用指向不同子类对象，调用同名方法执行不同子类实现逻辑。实现条件：存在继承关系、子类重写父类方法、父类引用指向子类对象。运行特点：编译阶段看父类引用类型，运行阶段看子类真实对象类型。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 10,
+      "type": "简答",
+      "title": "接口和抽象类有哪些共同点？",
+      "options": [],
+      "correctAnswer": ["二者都不能直接实例化对象；都可以定义抽象方法约束子类行为；都可以向上转型实现多态；都可以作为方法参数、返回值统一接收子类对象。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 11,
+      "type": "简答",
+      "title": "接口和抽象类的核心区别？",
+      "options": [],
+      "correctAnswer": ["抽象类使用 abstract 修饰，拥有构造方法、普通成员变量、普通成员方法，一个类只能继承一个抽象类；接口使用 interface 定义，无构造方法，成员变量默认 public static final，Java8 之前只有抽象方法，一个类可以同时实现多个接口。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 12,
+      "type": "简答",
+      "title": "Java8 与 Java9 为接口新增了哪些方法，作用分别是什么？",
+      "options": [],
+      "correctAnswer": ["Java8 新增 default 默认方法和 static 静态方法，默认方法解决接口升级导致子类全部重写的问题，静态方法属于接口本身可直接调用；Java9 新增 private 私有方法，用于接口内部代码复用，禁止外部类访问调用。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 13,
+      "type": "简答",
+      "title": "简述浅拷贝、深拷贝、引用拷贝三者区别？",
+      "options": [],
+      "correctAnswer": ["引用拷贝：仅拷贝对象引用地址，所有引用指向同一个对象；浅拷贝：创建全新外层对象，对象内部引用类型属性依旧共用原对象地址；深拷贝：创建完整全新对象，外层对象与内部所有引用属性全部独立，互不干扰。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 14,
+      "type": "简答",
+      "title": "浅拷贝存在什么问题，如何实现深拷贝？",
+      "options": [],
+      "correctAnswer": ["浅拷贝弊端：修改拷贝后对象内部引用类型的数据，会同步影响原对象数据，造成数据错乱。实现深拷贝方式：重写 clone 方法时手动拷贝内部引用对象；通过对象序列化与反序列化实现全自动深拷贝。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 15,
+      "type": "简答",
+      "title": "Object 类有哪些常用方法，至少列举五个？",
+      "options": [],
+      "correctAnswer": ["equals() 判断对象是否相等、hashCode() 获取对象哈希码、toString() 对象字符串输出、clone() 实现对象克隆、getClass() 获取对象字节码对象。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 16,
+      "type": "简答",
+      "title": "== 运算符和 equals() 方法的区别？",
+      "options": [],
+      "correctAnswer": ["== 是运算符，比较基本数据类型时判断数值是否相等，比较引用类型时判断内存地址是否相同；equals 是 Object 类中的方法，默认底层等同于 == 比较地址，子类重写后可自定义规则比较对象内容。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 17,
+      "type": "简答",
+      "title": "Object 类中默认 equals 方法底层实现逻辑？",
+      "options": [],
+      "correctAnswer": ["Object 原生 equals 方法底层直接使用 == 进行判断，仅判断两个对象是否指向堆内存中同一个地址，只有是同一个实例对象才会返回 true。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 18,
+      "type": "简答",
+      "title": "hashCode() 方法的作用是什么？",
+      "options": [],
+      "correctAnswer": ["用于生成对象对应的整数哈希码值，主要服务于 HashMap、HashSet 等哈希集合，能够快速定位对象存储位置，极大提升集合数据查询、存取的效率。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 19,
+      "type": "简答",
+      "title": "项目开发中为什么需要使用 hashCode 方法？",
+      "options": [],
+      "correctAnswer": ["Java 语法规定，两个 equals 相等的对象必须拥有相同哈希码，hashCode 配合 equals 共同规范哈希集合存储规则，避免集合出现重复元素，保障集合正常去重与检索功能。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 20,
+      "type": "简答",
+      "title": "两个对象 hashCode 相等是否代表对象相等，反之呢？",
+      "options": [],
+      "correctAnswer": ["hashCode 相等不能判定对象相等，存在哈希碰撞现象；如果两个对象通过 equals 判定相等，那么二者的 hashCode 必须相等，这是 Java 强制规范。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 21,
+      "type": "简答",
+      "title": "重写 equals 方法为什么必须重写 hashCode 方法，不重写有什么后果？",
+      "options": [],
+      "correctAnswer": ["违背 Java 对象相等协定，逻辑上内容相同的对象，会生成不同哈希码；存入 HashMap、HashSet 等集合中无法正常去重，查询数据失败，造成集合数据存储混乱。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 22,
+      "type": "简答",
+      "title": "日常开发中为什么要手动重写 equals 方法？",
+      "options": [],
+      "correctAnswer": ["Object 默认 equals 只比较内存地址，实际业务开发中，往往需要根据对象中的身份标识、核心字段判断对象是否一致，因此需要重写 equals 自定义内容比较规则。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 23,
+      "type": "简答",
+      "title": "只重写 equals 方法，不重写 hashCode 方法会出现什么问题？",
+      "options": [],
+      "correctAnswer": ["业务逻辑判定相等的对象，哈希值不一致，存入哈希集合会被当成两个不同对象存储，出现重复数据，导致去重失效、数据查询异常等线上问题。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 24,
+      "type": "简答",
+      "title": "equals 方法在开发中需要遵守哪五大核心协定？",
+      "options": [],
+      "correctAnswer": ["自反性：对象自身调用 equals 结果为 true；对称性：A 等于 B 则 B 一定等于 A；传递性：A 等于 B、B 等于 C，则 A 等于 C；一致性：对象数据不变，多次调用结果不变；非空性：任意对象与 null 比较结果都为 false。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 25,
+      "type": "简答",
+      "title": "重写 equals 时优先使用 getClass 判断类型，不用 instanceof 的原因？",
+      "options": [],
+      "correctAnswer": ["instanceof 会匹配父类与子类对象，在存在继承关系时会破坏 equals 对称性；getClass 严格匹配对象真实类型，只有类型完全一致才判定同类，有效规避继承带来的判断逻辑错误。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 26,
+      "type": "简答",
+      "title": "日常开发中如何规范正确实现 hashCode 方法？",
+      "options": [],
+      "correctAnswer": ["推荐使用 JDK 提供的 Objects.hash() 工具方法，将所有参与 equals 比较的核心字段作为参数传入，自动生成标准哈希码，保证 hashCode 与 equals 判断逻辑完全统一。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 27,
+      "type": "简答",
+      "title": "String、StringBuilder、StringBuffer 三者详细区别？",
+      "options": [],
+      "correctAnswer": ["1. 可变性：String 不可变，每次修改生成新对象；StringBuilder 和 StringBuffer 底层数组可变；2. 线程安全：String、StringBuffer 线程安全，StringBuilder 线程不安全；3. 执行效率：StringBuilder 效率最高，StringBuffer 次之，String 效率最低；4. 使用场景：少量字符串拼接用 String，单线程大量拼接用 StringBuilder，多线程拼接用 StringBuffer。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 28,
+      "type": "简答",
+      "title": "String 字符串为什么具备不可变性，底层原理是什么？",
+      "options": [],
+      "correctAnswer": ["String 类被 final 修饰禁止被继承，底层存储字符的数组也被 final 修饰，数组长度固定无法修改；所有字符串增删改查操作，都不会修改原字符串，而是重新创建新的 String 对象，因此具备不可变性。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 29,
+      "type": "简答",
+      "title": "Java9 将 String 底层 char 数组修改为 byte 数组的目的与好处？",
+      "options": [],
+      "correctAnswer": ["Java9 推出紧凑字符串优化机制，绝大多数日常字符串仅包含单字节字符，使用 byte 数组替代双字节 char 数组存储，能够直接节省一半堆内存空间，减少 JVM 垃圾回收频率，提升程序整体性能。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 30,
+      "type": "简答",
+      "title": "字符串拼接场景中选择 + 还是 StringBuilder，说明原因？",
+      "options": [],
+      "correctAnswer": ["普通单行少量拼接可以使用 +，编译器会自动优化为 StringBuilder；循环体内禁止使用 + 拼接，频繁循环拼接会创建大量临时字符串对象，浪费内存，循环拼接统一使用 StringBuilder 的 append 方法。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 31,
+      "type": "简答",
+      "title": "循环中使用 + 拼接字符串有什么弊端，如何优化解决？",
+      "options": [],
+      "correctAnswer": ["弊端：循环每执行一次都会创建新字符串对象，产生大量无效垃圾对象，占用堆内存，程序运行效率极低；优化方案：在循环外部创建 StringBuilder 对象，循环内部调用 append 拼接内容，循环结束后调用 toString 转为字符串。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 32,
+      "type": "简答",
+      "title": "String 类重写后的 equals 方法和原生 Object 的 equals 有什么不同？",
+      "options": [],
+      "correctAnswer": ["Object 原生 equals 比较内存地址；String 重写后的 equals 方法会逐一比对两个字符串内部每一个字符，只有所有字符顺序、内容完全一致才判定相等，不再判断内存地址。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 33,
+      "type": "简答",
+      "title": "什么是字符串常量池，它的作用是什么？",
+      "options": [],
+      "correctAnswer": ["字符串常量池是 JVM 专门开辟的一块字符串缓存区域；作用是缓存项目中频繁使用的字符串字面量，实现字符串对象复用，避免重复创建相同字符串，大幅节省内存资源，提升程序运行效率。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 34,
+      "type": "简答",
+      "title": "String s = new String(\"abc\") 一共会创建几个字符串对象？",
+      "options": [],
+      "correctAnswer": ["分两种情况，若字符串常量池中不存在 abc，会创建 2 个对象，分别是常量池中的字面量对象、堆内存中的 new 字符串对象；若常量池已存在 abc，仅创建 1 个堆内存中的字符串对象。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 35,
+      "type": "简答",
+      "title": "String 中的 intern() 方法作用与底层工作原理？",
+      "options": [],
+      "correctAnswer": ["作用：主动将字符串存入字符串常量池，实现对象复用节省内存；原理：调用 intern 方法后，优先在常量池中查找相同内容字符串，查到直接返回常量池引用，未查到则将当前字符串存入常量池再返回引用。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 36,
+      "type": "简答",
+      "title": "字面量常量拼接与变量字符串拼接底层执行区别？",
+      "options": [],
+      "correctAnswer": ["纯字面量常量拼接，编译阶段 Java 编译器会执行优化，直接拼接为完整字符串存入常量池；含有变量的字符串拼接，编译无法确定最终值，运行时通过 StringBuilder 完成拼接，生成堆内存中新字符串。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 37,
+      "type": "简答",
+      "title": "简述什么是常量折叠，编译器什么时候触发该优化？",
+      "options": [],
+      "correctAnswer": ["常量折叠是 Java 编译期优化手段，编译器直接在编译阶段计算出常量表达式最终结果；当参与拼接的内容全部为字符串字面量、final 修饰常量时，编译器自动触发常量折叠优化。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 38,
+      "type": "简答",
+      "title": "被 final 修饰的 String 变量进行字符串拼接有什么特点？",
+      "options": [],
+      "correctAnswer": ["被 final 修饰的 String 变量属于编译期常量，拼接过程会触发常量折叠优化，编译期直接生成最终拼接结果，存入字符串常量池，运行阶段不会创建额外临时对象。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 39,
+      "type": "简答",
+      "title": "42 == 42.0 运行结果是什么，说明具体原因？",
+      "options": [],
+      "correctAnswer": ["运行结果为 true；Java 中使用 == 对比不同基本数据类型时，会触发自动类型转换，int 类型 42 自动向上转型为 double 类型 42.0，二者数值完全相等，最终判定结果为 true。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 40,
+      "type": "简答",
+      "title": "引用拷贝和浅拷贝的核心区别是什么？",
+      "options": [],
+      "correctAnswer": ["引用拷贝全程不会创建新对象，所有引用变量共同指向同一个内存对象；浅拷贝会创建一个全新的外层实体对象，但是对象内部所有引用类型成员，依旧引用原对象的内存地址，没有创建新成员对象。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 41,
+      "type": "简答",
+      "title": "Java 接口中定义的成员变量默认修饰符是什么，有什么特性？",
+      "options": [],
+      "correctAnswer": ["接口中所有成员变量默认修饰符为 public static final；变量定义时必须直接初始化赋值，赋值后无法二次修改，变量属于接口本身，不属于实现类，全局所有实现类共用。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 42,
+      "type": "简答",
+      "title": "多态机制为什么编译看左边，运行看右边？",
+      "options": [],
+      "correctAnswer": ["编译阶段，编译器以左侧父类/接口引用为标准，校验调用的方法是否存在，保证代码语法无误；运行阶段，JVM 识别右侧真实子类对象，执行子类中重写后的方法实现，该机制依托 Java 动态分派实现。"],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 43,
+      "type": "简答",
+      "title": "Java 中类只支持单继承，接口却支持多实现的原因？",
+      "options": [],
+      "correctAnswer": ["类存在实体成员变量与具体方法实现，多继承容易出现子类继承多个父类同名方法，引发菱形继承冲突问题；接口仅定义行为规范，无实体业务实现，多实现不会出现方法逻辑冲突，因此设计为多实现。"],
+      "selectedAnswer": [],
+      "images": []
+    }
+  ]
+}
