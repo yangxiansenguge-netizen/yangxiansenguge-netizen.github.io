@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Java基础面试题（上）",
+    "filename": "java-basics.json",
+    "description": "JVM/JDK · 数据类型 · 变量 · 运算符等",
+    "questionCount": 30
+  },
+  {
+    "name": "Java基础面试题（中）",
+    "filename": "java-basics2.json",
+    "description": "面向对象 · 接口 · Object类 · String等",
+    "questionCount": 43
+  },
+  {
+    "name": "Java基础面试题（下）",
+    "filename": "java-basics3.json",
+    "description": "补充面试题",
+    "questionCount": 69
+  }
+]

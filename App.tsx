@@ -14,10 +14,16 @@ const App: React.FC = () => {
   const [userAnswers, setUserAnswers] = useState<Record<number, string | string[]>>({});
   const [error, setError] = useState<string | null>(null);
   const [storageWarning, setStorageWarning] = useState(false);
-  
+
   // Track which folders are open in the UI
   const [expandedFolders, setExpandedFolders] = useState<Record<string, boolean>>({});
   const [isDragging, setIsDragging] = useState(false);
+
+  // Available online datasets
+  const [availableDatasets, setAvailableDatasets] = useState<Array<{
+    name: string; filename: string; description: string; questionCount: number;
+  }>>([]);
+  const [loadingDataset, setLoadingDataset] = useState<string | null>(null);
 
   // --- PERSISTENCE & INIT ---
   useEffect(() => {
@@ -77,6 +83,68 @@ const App: React.FC = () => {
       console.error("Failed to load library", e);
     }
   }, []);
+
+  // Fetch available datasets manifest
+  useEffect(() => {
+    fetch('/datasets/manifest.json')
+      .then(res => res.json())
+      .then(data => setAvailableDatasets(data))
+      .catch(() => {/* manifest not available */});
+  }, []);
+
+  // Load a dataset from the public/datasets/ folder
+  const loadOnlineDataset = (filename: string) => {
+    setLoadingDataset(filename);
+    fetch(`/datasets/${filename}`)
+      .then(res => res.text())
+      .then(text => {
+        const firstBrace = text.indexOf('{');
+        const lastBrace = text.lastIndexOf('}');
+        if (firstBrace !== -1 && lastBrace !== -1) {
+          text = text.substring(firstBrace, lastBrace + 1);
+        }
+        const json = JSON.parse(text) as ExamData;
+        if (!json.items || !Array.isArray(json.items)) {
+          throw new Error("Invalid format");
+        }
+        const baseName = filename.replace('.json', '');
+        const questions = json.items;
+        let newEntry: LibraryEntry;
+        if (questions.length > CHUNK_SIZE) {
+          const chunks: SingleExamEntry[] = [];
+          const totalParts = Math.ceil(questions.length / CHUNK_SIZE);
+          for (let i = 0; i < questions.length; i += CHUNK_SIZE) {
+            const partNum = (i / CHUNK_SIZE) + 1;
+            chunks.push({
+              type: 'exam',
+              id: generateId(),
+              name: `${baseName} - Part ${partNum}/${totalParts}`,
+              dateAdded: Date.now(),
+              data: { ...json, items: questions.slice(i, i + CHUNK_SIZE) }
+            });
+          }
+          newEntry = { type: 'folder', id: generateId(), name: baseName, dateAdded: Date.now(), children: chunks };
+        } else {
+          newEntry = { type: 'exam', id: generateId(), name: baseName, dateAdded: Date.now(), data: json };
+        }
+        // Check for duplicate before adding
+        const exists = library.some(entry => {
+          if (entry.type === 'exam') return entry.name === baseName;
+          return entry.name === baseName;
+        });
+        if (exists) {
+          setError(`Dataset "${baseName}" already in library`);
+        } else {
+          saveLibrary([newEntry, ...library]);
+          setError(null);
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        setError("Failed to load dataset.");
+      })
+      .finally(() => setLoadingDataset(null));
+  };
 
   // --- GLOBAL EVENT LISTENERS (Navigation & Drag Prevention) ---
   useEffect(() => {
@@ -485,6 +553,42 @@ const App: React.FC = () => {
         {error && (
           <div className="mb-8 px-6 py-4 border-2 border-chalk-red text-chalk-red text-xl font-bold rounded bg-red-900/20 max-w-2xl w-full font-hand animate-bounce">
             ERROR: {error}
+          </div>
+        )}
+
+        {/* Available Online Datasets */}
+        {availableDatasets.length > 0 && (
+          <div className="w-full max-w-6xl mb-12">
+            <div className="flex items-center gap-3 mb-4 pl-2 border-l-4 border-chalk-yellow/50">
+              <svg className="w-6 h-6 text-chalk-yellow/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+              </svg>
+              <h2 className="text-2xl text-chalk-yellow/70 font-hand">Available Datasets (click to import)</h2>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              {availableDatasets.map(ds => (
+                <button
+                  key={ds.filename}
+                  type="button"
+                  disabled={loadingDataset === ds.filename}
+                  onClick={() => loadOnlineDataset(ds.filename)}
+                  className={`
+                    relative px-5 py-3 rounded border-2 border-dashed transition-all text-left font-hand
+                    ${loadingDataset === ds.filename
+                      ? 'border-chalk-yellow bg-chalk-yellow/10 animate-pulse'
+                      : 'border-chalk-gray/30 hover:border-chalk-yellow/60 hover:bg-white/5'
+                    }
+                  `}
+                >
+                  <span className="block text-chalk-white text-lg">{ds.name}</span>
+                  <span className="block text-chalk-gray text-sm mt-1">{ds.description}</span>
+                  <span className="block text-chalk-yellow/60 text-xs mt-1">{ds.questionCount} questions</span>
+                  {loadingDataset === ds.filename && (
+                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-chalk-yellow text-sm">Loading...</span>
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
         )}
 

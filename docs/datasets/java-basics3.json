@@ -1,0 +1,765 @@
+{
+    "source": "Java基础面试题库",
+    "ts": 1716000000000,
+    "items": [
+        {
+            "id": 1,
+            "type": "简答",
+            "title": "简述Error和Exception的区别",
+            "options": [],
+            "correctAnswer": [
+                "Error属于JVM层面严重系统错误，程序无法捕获处理，出现后基本无法恢复，常见栈溢出、内存溢出、虚拟机崩溃；Exception是程序运行产生的异常，开发者可捕获处理，分为运行时异常与受检异常两类。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 2,
+            "type": "简答",
+            "title": "运行时异常与受检异常有什么不同",
+            "options": [],
+            "correctAnswer": [
+                "运行时异常继承RuntimeException，编译阶段不强制校验处理，运行时才抛出；受检异常编译期必须try-catch捕获或throws声明抛出，否则编译失败，多用于IO、数据库等外部资源操作场景。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 3,
+            "type": "简答",
+            "title": "NullPointerException常见触发场景有哪些",
+            "options": [],
+            "correctAnswer": [
+                "调用null对象的方法与属性、操作null数组、null包装类自动拆箱、未判空直接使用对象返回值、空集合直接取值，都会触发空指针异常。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 4,
+            "type": "简答",
+            "title": "try、catch、finally执行顺序是什么",
+            "options": [],
+            "correctAnswer": [
+                "先执行try代码块逻辑，出现对应异常则进入catch块处理，无论程序正常执行还是捕获异常，最终都会执行finally代码块。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 5,
+            "type": "简答",
+            "title": "finally代码块一定会执行吗，哪些情况不会执行",
+            "options": [],
+            "correctAnswer": [
+                "并非绝对执行。调用System.exit退出JVM、线程强制终止、虚拟机崩溃、硬件断电中断程序时，finally代码不会执行。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 6,
+            "type": "简答",
+            "title": "try-with-resources语句作用及使用要求",
+            "options": [],
+            "correctAnswer": [
+                "用于自动关闭IO流、数据库连接等资源，避免资源泄漏；要求资源类必须实现AutoCloseable接口，程序结束后JVM自动完成关闭操作，无需手动编写关闭代码。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 7,
+            "type": "简答",
+            "title": "throw和throws关键字用法与区别",
+            "options": [],
+            "correctAnswer": [
+                "throw写在方法体内，主动抛出单个异常对象；throws标注在方法签名后，声明方法可能抛出的多种异常，用于告知调用方进行异常处理。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 8,
+            "type": "简答",
+            "title": "Java中重载和重写的异同点",
+            "options": [],
+            "correctAnswer": [
+                "相同点为方法名一致；重载位于同类中，参数列表不同即可构成，返回值与权限无限制；重写发生在父子类之间，方法签名完全一致，返回值兼容父类，访问权限不能缩小。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 9,
+            "type": "简答",
+            "title": "访问修饰符public、protected、default、private权限范围",
+            "options": [],
+            "correctAnswer": [
+                "private仅本类访问；default同包内可访问；protected同包以及不同包子类可访问；public全局任意包、任意类都能访问。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 10,
+            "type": "简答",
+            "title": "final修饰类、方法、变量分别有什么效果",
+            "options": [],
+            "correctAnswer": [
+                "final类无法被继承；final方法禁止子类重写；final基础变量赋值后数值不可修改，引用变量地址不可变更，对象内部属性允许修改。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 11,
+            "type": "简答",
+            "title": "static关键字的作用与使用场景",
+            "options": [],
+            "correctAnswer": [
+                "修饰成员归属类而非实例对象，可通过类名直接调用；常用于定义全局常量、通用工具方法、静态代码块初始化类资源、统计全局共享数据。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 12,
+            "type": "简答",
+            "title": "抽象类和接口的区别",
+            "options": [],
+            "correctAnswer": [
+                "抽象类有构造方法、普通成员变量，支持单继承，侧重代码模板复用；接口无构造方法，成员默认为常量与抽象方法，支持多实现，用于统一行为规范定义。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 13,
+            "type": "简答",
+            "title": "Object类常用方法有哪些及各自作用",
+            "options": [],
+            "correctAnswer": [
+                "equals判断对象内容相等；hashCode获取哈希编码；toString转为字符串；getClass获取实例类对象；wait、notify、notifyAll用于多线程等待与唤醒协作。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 14,
+            "type": "简答",
+            "title": "==和equals()的区别",
+            "options": [],
+            "correctAnswer": [
+                "基本类型==比较数值大小；引用类型==对比内存地址；equals默认比较地址，业务场景一般重写该方法，实现对象内部属性内容对比。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 15,
+            "type": "简答",
+            "title": "hashCode()与equals()关联规则",
+            "options": [],
+            "correctAnswer": [
+                "两个对象equals判定相等，哈希码必须相同；哈希码不相等则对象一定不相等；哈希码相同，无法判定对象内容必然相等。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 16,
+            "type": "简答",
+            "title": "Java中是值传递还是引用传递，为什么",
+            "options": [],
+            "correctAnswer": [
+                "Java仅有值传递，所有参数传递都会拷贝副本；基本类型传递数值副本，引用类型传递对象地址副本，方法内操作只会影响副本数据。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 17,
+            "type": "简答",
+            "title": "基本类型作为方法参数传递，修改后原数据是否变化",
+            "options": [],
+            "correctAnswer": [
+                "原数据不会改变，方法接收的是数值副本，内部修改仅作用于副本，不会对原始变量造成影响。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 18,
+            "type": "简答",
+            "title": "引用类型作为方法参数传递，修改对象属性原数据是否变化",
+            "options": [],
+            "correctAnswer": [
+                "原始对象属性会同步变更，副本地址与原地址指向堆中同一个对象，修改内部字段会直接生效。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 19,
+            "type": "简答",
+            "title": "方法内重新赋值引用变量，外部对象会不会改变",
+            "options": [],
+            "correctAnswer": [
+                "外部对象不会改变，仅修改方法内副本引用的指向，不会改动原有引用变量的指向地址。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 20,
+            "type": "简答",
+            "title": "举例说明值传递在实际编码中的表现",
+            "options": [],
+            "correctAnswer": [
+                "基本类型传参修改副本，原值不变；实体类传参修改内部属性，外部数据同步更新；重新赋值引用指向新对象，外部原有对象不受影响。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 21,
+            "type": "简答",
+            "title": "什么是序列化与反序列化",
+            "options": [],
+            "correctAnswer": [
+                "序列化将内存Java对象转为二进制字节流，用于存储或网络传输；反序列化把二进制数据还原为可用的Java对象实例。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 22,
+            "type": "简答",
+            "title": "Java实现序列化的方式有哪些",
+            "options": [],
+            "correctAnswer": [
+                "实现Serializable标记接口，由JDK自动完成序列化；实现Externalizable接口，手动重写方法自主控制序列化字段。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 23,
+            "type": "简答",
+            "title": "transient关键字作用是什么",
+            "options": [],
+            "correctAnswer": [
+                "被修饰的成员变量不会参与序列化流程，序列化时忽略该字段，反序列化后字段恢复为对应类型默认值。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 24,
+            "type": "简答",
+            "title": "serialVersionUID字段的作用",
+            "options": [],
+            "correctAnswer": [
+                "作为序列化版本标识，类结构改动后版本号变更，版本不匹配会反序列化报错，保障不同版本类之间解析兼容。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 25,
+            "type": "简答",
+            "title": "序列化对象时，静态属性能否被序列化",
+            "options": [],
+            "correctAnswer": [
+                "不能序列化，静态变量隶属于类本身，不属于对象实例，序列化仅保存实例对象数据。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 26,
+            "type": "简答",
+            "title": "JDK原生序列化的优缺点",
+            "options": [],
+            "correctAnswer": [
+                "优点为原生支持、使用简单无额外依赖；缺点是文件体积大、执行效率低、存在安全隐患，无法跨语言解析。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 27,
+            "type": "简答",
+            "title": "常用替代JDK序列化的方案有哪些",
+            "options": [],
+            "correctAnswer": [
+                "日常常用JSON、Protobuf、Hessian序列化，搭配Jackson、Fastjson等框架，兼顾性能体积与跨语言使用性。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 28,
+            "type": "简答",
+            "title": "什么是泛型，引入泛型的好处",
+            "options": [],
+            "correctAnswer": [
+                "编译期约束数据类型的语法机制，可校验类型合法性，规避强制转换异常，提升代码复用性、可读性与程序运行安全性。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 29,
+            "type": "简答",
+            "title": "泛型类、泛型接口、泛型方法如何定义",
+            "options": [],
+            "correctAnswer": [
+                "类与接口名称后加尖括号定义泛型标识；泛型方法在返回值前声明泛型符号，即可在参数与返回值中使用对应泛型类型。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 30,
+            "type": "简答",
+            "title": "什么是泛型擦除，擦除后的变化",
+            "options": [],
+            "correctAnswer": [
+                "泛型仅存在编译阶段，生成字节码时擦除泛型标识，无边界泛型转为Object类型，有边界则替换为上限父类，运行不存在泛型概念。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 31,
+            "type": "简答",
+            "title": "List<Object>和List<String>能否互相赋值，原因",
+            "options": [],
+            "correctAnswer": [
+                "无法互相赋值，泛型不存在继承关系，即便子类集合也不能赋值给父类泛型集合，避免破坏类型安全校验。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 32,
+            "type": "简答",
+            "title": "通配符?、? extends T、? super T含义",
+            "options": [],
+            "correctAnswer": [
+                "?代表任意未知类型；?extendsT代表T及其子类；?superT代表T及其所有父类类型。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 33,
+            "type": "简答",
+            "title": "简述PECS使用原则",
+            "options": [],
+            "correctAnswer": [
+                "生产者读取数据使用extends，只取不存；消费者写入数据使用super，只存不取，以此保证泛型集合读写安全。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 34,
+            "type": "简答",
+            "title": "泛型能否使用基本数据类型",
+            "options": [],
+            "correctAnswer": [
+                "不能直接使用基本类型，泛型基于引用类型设计，需替换为对应的包装类才可使用。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 35,
+            "type": "简答",
+            "title": "泛型数组创建存在什么问题",
+            "options": [],
+            "correctAnswer": [
+                "无法直接创建泛型数组，泛型擦除后运行时不能精准校验元素类型，容易引发类型转换异常。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 36,
+            "type": "简答",
+            "title": "简述Java反射的概念",
+            "options": [],
+            "correctAnswer": [
+                "程序运行过程中，动态获取类结构、创建实例、调用方法、操作属性的技术，是主流框架底层核心实现基础。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 37,
+            "type": "简答",
+            "title": "获取Class类实例有几种方式",
+            "options": [],
+            "correctAnswer": [
+                "四种方式：类名.class、对象.getClass()、Class.forName全类名、类加载器loadClass方法加载。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 38,
+            "type": "简答",
+            "title": "反射可以操作类的哪些结构",
+            "options": [],
+            "correctAnswer": [
+                "能够操作构造方法、成员方法、成员变量、注解、父类、实现接口等类全部组成结构。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 39,
+            "type": "简答",
+            "title": "反射如何无视权限修饰符调用私有方法、属性",
+            "options": [],
+            "correctAnswer": [
+                "调用setAccessible(true)关闭权限校验，即可绕过访问限制，操作私有成员变量与私有方法。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 40,
+            "type": "简答",
+            "title": "反射的优点和缺点",
+            "options": [],
+            "correctAnswer": [
+                "优点灵活性高，可动态适配类结构；缺点运行效率偏低，破坏封装特性，代码可读性与维护性较差。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 41,
+            "type": "简答",
+            "title": "反射常见应用场景",
+            "options": [],
+            "correctAnswer": [
+                "Spring容器管理对象、AOP切面增强、MyBatis映射、注解解析、动态代理、框架组件加载都会用到反射。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 42,
+            "type": "简答",
+            "title": "接口本身能否通过反射直接实例化",
+            "options": [],
+            "correctAnswer": [
+                "不能直接实例化接口本体，接口无构造方法，反射只能创建接口实现类、动态代理类的实例对象。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 43,
+            "type": "简答",
+            "title": "什么是代理模式，核心作用",
+            "options": [],
+            "correctAnswer": [
+                "为目标对象增设代理访问层，在不修改原有业务代码的前提下，拓展日志、事务、权限等附加功能，解耦通用逻辑与核心业务。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 44,
+            "type": "简答",
+            "title": "静态代理实现方式与优缺点",
+            "options": [],
+            "correctAnswer": [
+                "手动编写代理类包装目标对象，执行方法时拓展逻辑；实现简单无额外开销，但接口改动需同步修改代理类，代码冗余度高。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 45,
+            "type": "简答",
+            "title": "动态代理相比静态代理优势在哪",
+            "options": [],
+            "correctAnswer": [
+                "运行时自动生成代理类字节码，无需手动编写代理代码，一套逻辑可适配多个接口，通用性与拓展性更强。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 46,
+            "type": "简答",
+            "title": "JDK动态代理实现原理与使用条件",
+            "options": [],
+            "correctAnswer": [
+                "依托接口动态生成代理子类，通过反射调用目标方法；被代理类必须实现接口，无接口无法使用该代理方式。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 47,
+            "type": "简答",
+            "title": "CGLIB动态代理实现原理与限制",
+            "options": [],
+            "correctAnswer": [
+                "借助字节码技术生成目标类子类完成代理；无法代理被final修饰的类与方法，不能生成子类则无法实现代理。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 48,
+            "type": "简答",
+            "title": "JDK代理和CGLIB代理核心区别",
+            "options": [],
+            "correctAnswer": [
+                "JDK代理基于接口实现，仅能代理接口实现类；CGLIB依靠类继承，可代理普通无接口类。Spring优先JDK代理，无接口自动切换CGLIB。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 49,
+            "type": "简答",
+            "title": "动态代理日常应用场景",
+            "options": [],
+            "correctAnswer": [
+                "常用于SpringAOP切面、数据库事务管控、接口日志记录、权限校验、RPC远程调用封装场景。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 50,
+            "type": "简答",
+            "title": "为什么float、double会出现精度丢失",
+            "options": [],
+            "correctAnswer": [
+                "计算机以二进制存储数值，部分十进制小数无法精准转换为二进制，存储运算产生舍入偏差，最终造成精度丢失问题。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 51,
+            "type": "简答",
+            "title": "金融金额计算为什么必须使用BigDecimal",
+            "options": [],
+            "correctAnswer": [
+                "BigDecimal采用十进制精准运算，规避浮点计算误差，金融资金核算对精度要求严苛，微小偏差都会造成资金损失。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 52,
+            "type": "简答",
+            "title": "创建BigDecimal对象哪些写法正确、哪些错误",
+            "options": [],
+            "correctAnswer": [
+                "传入double参数构造对象存在精度缺陷，属于错误写法；使用字符串构造、valueOf方法创建，能够保证数值精准无误。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 53,
+            "type": "简答",
+            "title": "BigDecimal四则运算注意事项",
+            "options": [],
+            "correctAnswer": [
+                "BigDecimal属于不可变类，运算不会修改原对象，计算后生成新对象，必须定义变量接收运算返回结果。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 54,
+            "type": "简答",
+            "title": "BigDecimal除法运算为什么要指定精度与舍入模式",
+            "options": [],
+            "correctAnswer": [
+                "若计算结果为无限小数，未设置小数保留位数与舍入规则，程序会直接抛出算术异常，无法正常完成计算。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 55,
+            "type": "简答",
+            "title": "BigDecimal比较数值大小用什么方法，为何不用equals",
+            "options": [],
+            "correctAnswer": [
+                "数值对比使用compareTo方法；equals会同时比对数值与小数位数，单纯判断数值相等场景不适用。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 56,
+            "type": "简答",
+            "title": "常用的舍入模式有哪几种",
+            "options": [],
+            "correctAnswer": [
+                "常用四舍五入、直接截断尾数、向上进位、向下取整，金额业务普遍采用四舍五入模式。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 57,
+            "type": "简答",
+            "title": "项目中如何封装BigDecimal工具类",
+            "options": [],
+            "correctAnswer": [
+                "统一封装加减乘除、小数保留、数值比较方法，固定小数位数与舍入规则，内部处理空值避免异常，业务直接调用工具方法即可。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 58,
+            "type": "简答",
+            "title": "简述SPI机制概念",
+            "options": [],
+            "correctAnswer": [
+                "Java服务发现机制，调用方定义接口规范，第三方提供具体实现类，程序运行自动扫描加载实现，实现接口与代码解耦。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 59,
+            "type": "简答",
+            "title": "SPI和API调用方式的区别",
+            "options": [],
+            "correctAnswer": [
+                "API由调用方主动依赖服务方接口；SPI接口定义在调用端，服务方提供实现，调用端自动扫描加载实现类执行逻辑。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 60,
+            "type": "简答",
+            "title": "Java SPI实现步骤",
+            "options": [],
+            "correctAnswer": [
+                "定义业务接口、编写实现类、配置文件注册实现类全限定名，通过SPI加载器读取配置，反射创建实例使用。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 61,
+            "type": "简答",
+            "title": "SPI机制的优缺点",
+            "options": [],
+            "correctAnswer": [
+                "优点解耦性强，无需改动代码即可替换实现类；缺点加载效率偏低，无法按需精准获取指定实现类。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 62,
+            "type": "简答",
+            "title": "SPI实际应用场景举例",
+            "options": [],
+            "correctAnswer": [
+                "应用于JDBC驱动加载、日志框架适配、Dubbo插件扩展、各类中间件组件动态加载场景。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 63,
+            "type": "简答",
+            "title": "列举日常常用的Java语法糖",
+            "options": [],
+            "correctAnswer": [
+                "包含自动装箱拆箱、增强for循环、泛型、Lambda表达式、try-with-resources、枚举、字符串switch判断等。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 64,
+            "type": "简答",
+            "title": "自动装箱拆箱底层原理",
+            "options": [],
+            "correctAnswer": [
+                "装箱底层调用包装类valueOf方法生成对象；拆箱调用intValue、doubleValue等方法，将包装对象转为基本数据类型。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 65,
+            "type": "简答",
+            "title": "for循环增强for底层实现",
+            "options": [],
+            "correctAnswer": [
+                "编译后转换为迭代器遍历代码，依托Iterator迭代器完成集合与数组的元素遍历操作。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 66,
+            "type": "简答",
+            "title": "泛型语法糖编译后如何处理",
+            "options": [],
+            "correctAnswer": [
+                "泛型仅为编译期优化语法，编译生成字节码时执行泛型擦除，剔除泛型标记，还原为原始数据类型。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 67,
+            "type": "简答",
+            "title": "Lambda表达式底层原理",
+            "options": [],
+            "correctAnswer": [
+                "编译阶段生成匿名内部类，程序运行时通过invokedynamic动态指令，调用执行对应的业务逻辑。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 68,
+            "type": "简答",
+            "title": "枚举类语法糖本质",
+            "options": [],
+            "correctAnswer": [
+                "枚举属于语法糖，编译后生成final修饰普通类，枚举常量本质是类内部静态实例对象。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 69,
+            "type": "简答",
+            "title": "数组遍历语法糖底层逻辑",
+            "options": [],
+            "correctAnswer": [
+                "数组增强遍历编译后转为常规下标遍历方式，依靠数组索引依次读取每一个数组元素。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        }
+    ]
+}
