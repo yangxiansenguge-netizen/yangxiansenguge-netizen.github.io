@@ -16,5 +16,11 @@
     "filename": "java-basics3.json",
     "description": "补充面试题",
     "questionCount": 69
+  },
+  {
+    "name": "Java集合面试题",
+    "filename": "java-basics4.json",
+    "description": "List · Set · Queue · Map 等集合框架",
+    "questionCount": 15
   }
 ]
