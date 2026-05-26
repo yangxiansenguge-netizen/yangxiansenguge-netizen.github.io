@@ -1,0 +1,171 @@
+{
+    "source": "Java基础面试题库",
+    "ts": 1716000000000,
+    "items": [
+        {
+            "id": 1,
+            "type": "简答",
+            "title": "List、Set、Queue、Map四者区别",
+            "options": [],
+            "correctAnswer": [
+                "List有序可重复；Set无序不可重复；Queue遵循排队规则，有序可重复；Map以键值对存储，key唯一，value允许重复。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 2,
+            "type": "简答",
+            "title": "ArrayList与普通数组的区别",
+            "options": [],
+            "correctAnswer": [
+                "数组长度固定不可变更，ArrayList支持动态扩容；数组可存基本类型与引用类型，ArrayList仅能存放对象；ArrayList具备丰富内置方法，数组操作形式单一。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 3,
+            "type": "简答",
+            "title": "ArrayList和LinkedList区别",
+            "options": [],
+            "correctAnswer": [
+                "ArrayList底层基于动态数组，随机访问速度快，中间增删效率低；LinkedList采用双向链表结构，头尾增删性能优异，不支持快速随机访问，内存占用相对更高。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 4,
+            "type": "简答",
+            "title": "简述ArrayList扩容机制",
+            "options": [],
+            "correctAnswer": [
+                "空参初始化初始容量为0，首次添加元素扩容至10；触发扩容时按照原容量1.5倍扩增，底层通过数组拷贝完成数据迁移。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 5,
+            "type": "简答",
+            "title": "RandomAccess接口作用",
+            "options": [],
+            "correctAnswer": [
+                "属于标记接口，标识当前集合支持快速随机访问，程序可依据该标识选用适配的遍历、查找算法提升执行效率。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 6,
+            "type": "简答",
+            "title": "HashSet、LinkedHashSet、TreeSet三者区别",
+            "options": [],
+            "correctAnswer": [
+                "HashSet无序去重，底层依托HashMap；LinkedHashSet保留元素插入顺序；TreeSet可自定义规则排序，底层基于红黑树结构。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 7,
+            "type": "简答",
+            "title": "Comparable和Comparator的区别",
+            "options": [],
+            "correctAnswer": [
+                "Comparable是内部自然排序，在实体类重写compareTo方法；Comparator为外部定制排序，独立编写比较器，可灵活切换排序规则。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 8,
+            "type": "简答",
+            "title": "TreeMap要求key实现Comparable接口的原因",
+            "options": [],
+            "correctAnswer": [
+                "TreeMap底层为红黑树，存储元素需要对比大小排序，key不具备比较能力会直接抛出类型转换异常。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 9,
+            "type": "简答",
+            "title": "fail-fast与fail-safe机制区别",
+            "options": [],
+            "correctAnswer": [
+                "快速失败遍历中检测集合结构修改，立即抛出并发修改异常；安全失败复制数据快照遍历，不会抛出异常，无法感知遍历期间的数据变动。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 10,
+            "type": "简答",
+            "title": "HashMap JDK1.7和JDK1.8主要差异",
+            "options": [],
+            "correctAnswer": [
+                "1.7采用数组加链表，头插法存入数据；1.8新增红黑树结构，改用尾插法，链表长度达标可转为红黑树，优化查询性能。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 11,
+            "type": "简答",
+            "title": "HashMap为什么建议同时重写equals与hashCode方法",
+            "options": [],
+            "correctAnswer": [
+                "依靠hashCode确定元素存储桶位置，通过equals判断对象是否等同，只重写单一方法会出现元素重复存放、查询不到数据问题。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 12,
+            "type": "简答",
+            "title": "HashMap、Hashtable、ConcurrentHashMap对比",
+            "options": [],
+            "correctAnswer": [
+                "HashMap线程不安全，允许空键空值；Hashtable全局锁效率低，不允许空数据；ConcurrentHashMap分段加锁并发安全，读写性能更优秀。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 13,
+            "type": "简答",
+            "title": "Queue和Deque队列的区别",
+            "options": [],
+            "correctAnswer": [
+                "Queue为单端队列，遵循先进先出规则；Deque属于双端队列，两端均可增删元素，既可以当作队列也能当作栈使用。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 14,
+            "type": "简答",
+            "title": "ArrayDeque与LinkedList使用差异",
+            "options": [],
+            "correctAnswer": [
+                "ArrayDeque基于数组实现，运行性能更高，不能存储null元素；LinkedList链表实现，可存放null，频繁节点切换内存消耗更大。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        },
+        {
+            "id": 15,
+            "type": "简答",
+            "title": "简述PriorityQueue优先队列原理",
+            "options": [],
+            "correctAnswer": [
+                "底层采用二叉堆结构，默认小顶堆排序，存取元素时间复杂度为对数级别，存入元素必须具备比较能力，不支持存放null值。"
+            ],
+            "selectedAnswer": [],
+            "images": []
+        }
+    ]
+}
